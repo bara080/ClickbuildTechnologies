@@ -25,6 +25,11 @@ export default function Products() {
     );
   };
 
+  // add this function
+  const startAgentDemo = (agentId: string) => {
+    alert("Agent is Soon!");
+  };
+
   return (
     <section className="why-section" id="products">
       <div className="section-header fade-in">
