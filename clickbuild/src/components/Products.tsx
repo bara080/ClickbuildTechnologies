@@ -75,6 +75,34 @@ export default function Products() {
             Learn More →
           </button>
         </div>
+
+        {/* Agentic AI CRM Card */}
+        <div className="product-card fade-in">
+          <span className="product-type">AGENTIC AI</span>
+          <div className="product-icon">🤖</div>
+          <h3>AI CRM Copilot</h3>
+          <p>
+            An agentic CRM copilot that plans, executes, and learns—from
+            prospecting to follow-ups—using tools, memory, and your data. Reduce
+            manual ops; boost pipeline velocity.
+          </p>
+
+          <ul className="feature-list">
+            <li>Autonomous lead triage & routing (SLA-aware)</li>
+            <li>Multi-step outreach (email/SMS) with auto A/B learning</li>
+            <li>RAG over CRM + docs (secure, role-aware)</li>
+            <li>Calendar booking & task creation via tool use</li>
+            <li>Playbooks as graphs (multi-agent handoffs)</li>
+            <li>Guardrails, approvals, and audit trail</li>
+          </ul>
+
+          <button
+            className="product-cta"
+            onClick={() => startAgentDemo("ai-crm-copilot")}
+          >
+            Run AI Demo →
+          </button>
+        </div>
       </div>
     </section>
   );
