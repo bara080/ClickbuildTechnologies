@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-
+import Image from "next/image";
+import clickBuildIcon from "@/public/ClickBuildIcon.jpg";
 export default function NavBar() {
   const [open, setOpen] = useState(false);
 
@@ -31,9 +32,15 @@ export default function NavBar() {
     <nav id="navbar">
       <div className="nav-inner">
         <div className="logo-wrap">
-          <div className="logo-container">
-            <div className="logo">ClickBuild Technologies</div>
-            <div className="company-name">ClickBuild Technology</div>
+          <div className="nav-links">
+            <Image
+              src="/clickBuildIcon.jpg"
+              alt="ClickBuild Technologies logo"
+              width={40}
+              height={40}
+              priority
+            />
+            <div className="logo">ClickBuild Tech</div>
           </div>
         </div>
 

@@ -1,9 +1,7 @@
 "use client";
 export default function CTA() {
   const openContactForm = () => {
-    alert(
-      "Demo scheduling form would open here!\n\nIn production, this would connect to your CRM or calendar booking system."
-    );
+    alert("Booking system is on the WAY!");
   };
   return (
     <section className="cta-section" id="contact">
