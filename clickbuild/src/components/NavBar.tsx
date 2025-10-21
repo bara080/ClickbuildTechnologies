@@ -2,7 +2,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const onScrollTo = useCallback((s: string) => {
@@ -27,7 +27,7 @@ export default function NavBar() {
   return (
     <nav id="navbar">
       <div className="nav-inner">
-        <a className="logo-wrap" href="/" aria-label="ClickBuild home">
+        <Link className="logo-wrap" href="/" aria-label="ClickBuild home">
           <div className="logo-container">
             <Image
               src="/ClickBuildIcon.jpg" // <-- exact case-sensitive path
@@ -38,10 +38,10 @@ export default function NavBar() {
             />
             <div className="logo">ClickBuild Tech</div>
           </div>
-        </a>
+        </Link>
 
         <div className="nav-links desktop-only">
-          <a
+          <Link
             href="#products"
             onClick={(e) => {
               e.preventDefault();
@@ -49,8 +49,8 @@ export default function NavBar() {
             }}
           >
             Products
-          </a>
-          <a
+          </Link>
+          <Link
             href="#why"
             onClick={(e) => {
               e.preventDefault();
@@ -58,8 +58,8 @@ export default function NavBar() {
             }}
           >
             Why ClickBuild?
-          </a>
-          <a
+          </Link>
+          <Link
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
@@ -67,7 +67,7 @@ export default function NavBar() {
             }}
           >
             Contact
-          </a>
+          </Link>
           <button className="nav-cta" onClick={() => onScrollTo("#contact")}>
             Get Started
           </button>
@@ -85,7 +85,7 @@ export default function NavBar() {
       </div>
 
       <div id="mobile-menu" className={`mobile-menu ${open ? "open" : ""}`}>
-        <a
+        <Link
           href="#products"
           onClick={(e) => {
             e.preventDefault();
@@ -93,8 +93,8 @@ export default function NavBar() {
           }}
         >
           Products
-        </a>
-        <a
+        </Link>
+        <Link
           href="#why"
           onClick={(e) => {
             e.preventDefault();
@@ -102,8 +102,8 @@ export default function NavBar() {
           }}
         >
           Why ClickBuild?
-        </a>
-        <a
+        </Link>
+        <Link
           href="#contact"
           onClick={(e) => {
             e.preventDefault();
@@ -111,7 +111,7 @@ export default function NavBar() {
           }}
         >
           Contact
-        </a>
+        </Link>
         <button className="nav-cta full" onClick={() => onScrollTo("#contact")}>
           Get Started
         </button>
