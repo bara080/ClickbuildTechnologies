@@ -1,40 +1,36 @@
+// src/components/NavBar.tsx
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import clickBuildIcon from "@/public/ClickBuildIcon.jpg";
+
 export default function NavBar() {
   const [open, setOpen] = useState(false);
-
-  const onScrollTo = useCallback((selector: string) => {
-    const el = document.querySelector(selector);
-    el?.scrollIntoView({ behavior: "smooth", block: "start" });
-    setOpen(false); // close mobile menu after click
+  const onScrollTo = useCallback((s: string) => {
+    document
+      .querySelector(s)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    setOpen(false);
   }, []);
 
   useEffect(() => {
-    const navbar = document.getElementById("navbar");
-    const onScroll = () => {
-      if (!navbar) return;
-      if (window.scrollY > 50) navbar.classList.add("scrolled");
-      else navbar.classList.remove("scrolled");
-    };
+    const n = document.getElementById("navbar");
+    const onScroll = () =>
+      n ? n.classList.toggle("scrolled", window.scrollY > 50) : void 0;
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // lock body scroll when menu is open (mobile)
   useEffect(() => {
-    if (open) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "";
+    document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
   return (
     <nav id="navbar">
       <div className="nav-inner">
-        <div className="logo-wrap">
-          <div className="nav-links">
+        <a className="logo-wrap" href="/" aria-label="ClickBuild home">
+          <div className="logo-container">
             <Image
-              src="/clickBuildIcon.jpg"
+              src="/ClickBuildIcon.jpg" // <-- exact case-sensitive path
               alt="ClickBuild Technologies logo"
               width={40}
               height={40}
@@ -42,9 +38,8 @@ export default function NavBar() {
             />
             <div className="logo">ClickBuild Tech</div>
           </div>
-        </div>
+        </a>
 
-        {/* Desktop links */}
         <div className="nav-links desktop-only">
           <a
             href="#products"
@@ -78,7 +73,6 @@ export default function NavBar() {
           </button>
         </div>
 
-        {/* Mobile toggle */}
         <button
           aria-label="Open menu"
           aria-expanded={open}
@@ -90,7 +84,6 @@ export default function NavBar() {
         </button>
       </div>
 
-      {/* Mobile drawer */}
       <div id="mobile-menu" className={`mobile-menu ${open ? "open" : ""}`}>
         <a
           href="#products"

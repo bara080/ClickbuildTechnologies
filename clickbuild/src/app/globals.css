@@ -91,6 +91,12 @@ nav.scrolled {
   background-clip: text;
   letter-spacing: -0.5px;
 }
+.logo-wrap,
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .company-name {
   font-size: 0.7rem;
   color: #64748b;

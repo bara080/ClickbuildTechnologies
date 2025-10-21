@@ -8,6 +8,10 @@ export default function Hero() {
       <div className="bg-decoration">
         <div className="gradient-orb orb-1" />
         <div className="gradient-orb orb-2" />
+        <meta
+          name="google-site-verification"
+          content="KXtYyJTO8990A-UZV1IV2GxHvvx2bI50dPW6zX3mcqc"
+        />
       </div>
       <div className="hero-grid">
         <div className="hero-content">
