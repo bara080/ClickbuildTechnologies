@@ -4,7 +4,6 @@ import Products from "@/components/Products";
 import Company from "@/components/Company";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import type { Metadata } from "next";
 export default function Page() {
   return (
     <main>
