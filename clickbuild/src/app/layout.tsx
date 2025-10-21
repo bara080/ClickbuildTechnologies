@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -5,6 +6,10 @@ export const metadata: Metadata = {
   title: "ClickBuild Technologies | B2B Mobile & SaaS Solutions",
   description:
     "Bridge the gap between services & clients with ClickBuild — mobile-first and cloud SaaS solutions.",
+  robots: { index: true, follow: true }, // set false/false while staging
+  verification: {
+    google: "KXtYyJTO8990A-UZV1IV2GxHvvx2bI50dPW6zX3mcqc", // paste ONLY the code
+  },
 };
 
 export default function RootLayout({
@@ -14,10 +19,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <meta
-        name="google-site-verification"
-        content="KXtYyJTO8990A-UZV1IV2GxHvvx2bI50dPW6zX3mcqc"
-      />
       <body>{children}</body>
     </html>
   );
